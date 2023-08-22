@@ -1,3 +1,5 @@
+// Aqui está uma lista de objetos que representam as questões do quizz
+
 let questoes = [
     questao = {
         tituloQuestao: "De quem é a famosa frase “Penso, logo existo?",
@@ -36,6 +38,8 @@ let questoes = [
     },
    
 ]
+// variáveis que representam elementos do HTML
+// Cada uma dessas variáveis é obtida usando o método document.querySelector()
 const btn0 = document.querySelector("#btn-0"),
     btn1 = document.querySelector("#btn-1"),
     btn2 = document.querySelector("#btn-2"),
@@ -53,6 +57,7 @@ const btn0 = document.querySelector("#btn-0"),
     feedback = document.querySelector("#feedback")
     
 
+// Event listener para o botão "reiniciar"
 reiniciar.addEventListener('click', () => {
     comecoDiv.classList.remove('hide')
     questoesDiv.classList.add('hide')
@@ -60,6 +65,9 @@ reiniciar.addEventListener('click', () => {
     score = 0
     questaoAtual = 0
 })
+
+
+// Event listener para o botão "iniciar"
 btnIniciar.addEventListener('click', () => {
     vidas = document.querySelector('#vidas').value
     if (vidas >= 1 && vidas <= 10){
@@ -76,9 +84,12 @@ btnIniciar.addEventListener('click', () => {
 
 })
 
-
+// Aqui você define duas variáveis globais: questaoAtual e score
 let questaoAtual = 0,
   score = 0
+
+  
+// Função para carregar a próxima questão
 function carregar(){
     if(questaoAtual < questoes.length){
         btn0.classList.remove("correct",'wrong')
@@ -99,8 +110,9 @@ function carregar(){
         fimDiv.classList.remove('hide')
         carregarTermino()
     }
-
 }
+
+// Função para exibir o resultado final do quizz
 function carregarTermino(){
     questoesDiv.classList.add('hide')
     fimDiv.classList.remove('hide')
@@ -117,7 +129,7 @@ function carregarTermino(){
 
 
 
-
+// Event listeners para os botões de resposta
 btn0.addEventListener('click', () => {
     resposta = 0
     respostaCerta = questoes[questaoAtual].respostaCorreta
@@ -251,3 +263,10 @@ btn3.addEventListener('click', () => {
 
     }
 })
+
+
+
+
+// Basicamente, esse código JavaScript manipula os elementos da página HTML para criar um quizz interativo. Ele usa event listeners para lidar com cliques nos botões de resposta e no botão "Iniciar", atualiza as informações da questão atual e do placar, e controla a transição entre as diferentes etapas do quizz (início, perguntas e final).
+
+// Cada vez que um botão de resposta é clicado, a função correspondente é acionada para verificar se a resposta está correta, atualizar o placar e avançar para a próxima questão. Quando todas as questões forem respondidas, a função carregarTermino() é chamada para exibir a tela final com o resultado do quizz.
