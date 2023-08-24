@@ -124,7 +124,7 @@ input {
 }
 
 
-#tituloDaQuestao {
+#tituloDaPergunta {
     display: flex;
     justify-content: center;
     align-items: center;
