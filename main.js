@@ -5,7 +5,7 @@ let questoes = [
         tituloQuestao: "De quem é a famosa frase “Penso, logo existo?",
         opcoes: ["Platão"," Galileu Galilei","Descartes","Sócrates"],
         respostaCorreta: 2,
-        imagemQuestao:"img 1.jpg",
+        imagemQuestao:'img1.jpg',
         dificuldade: "easy"
     },
     questao = {
